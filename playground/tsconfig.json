@@ -1,0 +1,11 @@
+{
+  "extends": "../tsconfig.base.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "outDir": "../../dist/out-tsc",
+    "types": ["node"],
+    "typeRoots": ["../types", "../node_modules/@types"]
+  },
+  "include": ["src/**/*", "../types/**/*"],
+  "exclude": ["node_modules", "dist"]
+}

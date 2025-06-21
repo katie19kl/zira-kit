@@ -1,0 +1,30 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "esModuleInterop": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@zira-kit/checkbox": ["packages/checkbox/src/index.ts"],
+      "@zira-kit/dropdown": ["packages/dropdown/src/index.ts"]
+    },
+    "typeRoots": ["types", "node_modules/@types"]
+  },
+  "include": [
+    "packages/**/*",
+    "types/**/*.d.ts"
+  ],
+  
+  "exclude": ["node_modules", "tmp"]
+}

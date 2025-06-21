@@ -1,0 +1,32 @@
+{
+  "name": "checkbox",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/checkbox/src",
+  "projectType": "library",
+  "release": {
+    "version": {
+      "manifestRootsToUpdate": ["dist/{projectRoot}"],
+      "currentVersionResolver": "git-tag",
+      "fallbackCurrentVersionResolver": "disk"
+    }
+  },
+  "tags": [],
+  "targets": {
+    "nx-release-publish": {
+      "options": {
+        "packageRoot": "dist/{projectRoot}"
+      }
+    },
+    "build": {
+      "executor": "@nx/rollup:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/checkbox",
+        "config": "packages/checkbox/rollup.config.ts",
+        "tsConfig": "packages/checkbox/tsconfig.lib.json",
+        "project": "packages/checkbox/package.json",
+        "entryFile": "packages/checkbox/src/index.ts"
+      }
+    }
+  }
+}

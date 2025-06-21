@@ -1,0 +1,32 @@
+{
+  "name": "dropdown",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/dropdown/src",
+  "projectType": "library",
+  "release": {
+    "version": {
+      "manifestRootsToUpdate": ["dist/{projectRoot}"],
+      "currentVersionResolver": "git-tag",
+      "fallbackCurrentVersionResolver": "disk"
+    }
+  },
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/rollup:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/dropdown",
+        "config": "packages/dropdown/rollup.config.ts",
+        "tsConfig": "packages/dropdown/tsconfig.lib.json",
+        "project": "packages/dropdown/package.json",
+        "entryFile": "packages/dropdown/src/index.ts"
+      }
+    },
+    "nx-release-publish": {
+      "options": {
+        "packageRoot": "dist/{projectRoot}"
+      }
+    }
+  }
+}

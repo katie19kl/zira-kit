@@ -1,0 +1,29 @@
+{
+  "name": "playground",
+  "sourceRoot": "playground/src",
+  "projectType": "application",
+  "root": "playground",
+  "targets": {
+     "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "vite build",
+        "cwd": "playground"
+      }
+    },
+    "serve": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "vite",
+        "cwd": "playground"
+      }
+    },
+    "preview": {
+      "executor": "@nx/vite:preview",
+      "options": {
+        "configFile": "./playground/vite.config.ts"
+      }
+    }
+  },
+  "tags": []
+}

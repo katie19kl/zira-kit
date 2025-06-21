@@ -1,0 +1,30 @@
+.zk-dropdown {
+  width: 200px;
+  position: relative;
+
+  .dropdown-header {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    background: #fff;
+  }
+
+  .dropdown-list {
+    position: absolute;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: 1px solid #ccc;
+    background: #fff;
+
+    li {
+      padding: 0.5rem;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #f0f0f0;
+      }
+    }
+  }
+}

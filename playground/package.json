@@ -1,0 +1,22 @@
+{
+  "name": "playground",
+  "version": "0.0.1",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "build": "nx build playground"
+  },
+  "private": true,
+  "devDependencies": {
+    "@svgr/rollup": "^8.1.0",
+    "@types/node": "18.16.9",
+    "@vitejs/plugin-react": "^4.5.2",
+    "rollup-plugin-postcss": "^4.0.2",
+    "vite": "^6.3.5",
+    "vite-plugin-svgr": "^4.3.0"
+  },
+  "dependencies": {
+    "@zira-kit/checkbox": "workspace:*",
+    "@zira-kit/dropdown": "workspace:*"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "module": "commonjs",
+    "jsx": "react-jsx",
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "importHelpers": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "typeRoots": ["../../types", "../../node_modules/@types"]
+  },
+  "files": [],
+  "include": ["../../types/**/*", "src/**/*"],
+  "references": [
+    {
+      "path": "./tsconfig.lib.json"
+    },
+  ],
+}
