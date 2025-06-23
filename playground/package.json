@@ -16,7 +16,10 @@
     "vite-plugin-svgr": "^4.3.0"
   },
   "dependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
     "@zira-kit/checkbox": "workspace:*",
-    "@zira-kit/dropdown": "workspace:*"
+    "@zira-kit/dropdown": "workspace:*",
+    "@zira-kit/datePicker": "workspace:*"
   }
 }
