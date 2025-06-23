@@ -17,7 +17,8 @@
     "baseUrl": ".",
     "paths": {
       "@zira-kit/checkbox": ["packages/checkbox/src/index.ts"],
-      "@zira-kit/dropdown": ["packages/dropdown/src/index.ts"]
+      "@zira-kit/dropdown": ["packages/dropdown/src/index.ts"],
+      "@zira-kit/datePicker": ["packages/datePicker/src/index.ts"]
     },
     "typeRoots": ["types", "node_modules/@types"]
   },

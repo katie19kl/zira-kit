@@ -1,0 +1,32 @@
+{
+  "name": "datePicker",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/datePicker/src",
+  "projectType": "library",
+  "release": {
+    "version": {
+      "manifestRootsToUpdate": ["dist/{projectRoot}"],
+      "currentVersionResolver": "git-tag",
+      "fallbackCurrentVersionResolver": "disk"
+    }
+  },
+  "tags": [],
+  "targets": {
+    "nx-release-publish": {
+      "options": {
+        "packageRoot": "dist/{projectRoot}"
+      }
+    },
+    "build": {
+      "executor": "@nx/rollup:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/datePicker",
+        "config": "packages/datePicker/rollup.config.ts",
+        "tsConfig": "packages/datePicker/tsconfig.lib.json",
+        "project": "packages/datePicker/package.json",
+        "entryFile": "packages/datePicker/src/index.ts"
+      }
+    }
+  }
+}

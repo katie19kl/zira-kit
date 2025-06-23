@@ -1,0 +1,14 @@
+{
+  "name": "@zira-kit/datePicker",
+  "version": "0.0.1",
+  "main": "index.ts",
+  "exports": {
+    ".": {
+      "import": "./src/index.ts"
+    }
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.8",
+    "svgr": "^2.0.0"
+  }
+}
