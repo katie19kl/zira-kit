@@ -1,0 +1,14 @@
+{
+  "name": "@zira-kit/common",
+  "version": "0.0.1",
+  "main": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.esm.js"
+    }
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.8"
+  }
+}

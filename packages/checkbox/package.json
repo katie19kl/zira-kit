@@ -10,5 +10,8 @@
   "devDependencies": {
     "@types/react": "^19.1.8",
     "svgr": "^2.0.0"
+  },
+  "dependencies": {
+    "@zira-kit/common": "workspace:*"
   }
 }
