@@ -15,8 +15,8 @@ module.exports = withNx(
         extract: true,
         minimize: true,
         modules: true,
-      }),
-    ],
+      })
+    ]
   },
   {
     // Provide additional rollup configuration here. See: https://rollupjs.org/configuration-options

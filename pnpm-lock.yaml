@@ -100,6 +100,10 @@ importers:
         version: 6.1.4(typanion@3.14.0)
 
   packages/checkbox:
+    dependencies:
+      '@zira-kit/common':
+        specifier: workspace:*
+        version: link:../common
     devDependencies:
       '@types/react':
         specifier: ^19.1.8
@@ -107,6 +111,12 @@ importers:
       svgr:
         specifier: ^2.0.0
         version: 2.0.0
+
+  packages/common:
+    devDependencies:
+      '@types/react':
+        specifier: ^19.1.8
+        version: 19.1.8
 
   packages/dropdown:
     devDependencies:
@@ -120,8 +130,8 @@ importers:
   playground:
     dependencies:
       '@zira-kit/checkbox':
-        specifier: link:C:/Users/doron/idan/zira-kit/packages/checkbox/dist
-        version: link:../packages/checkbox/dist
+        specifier: workspace:*
+        version: link:../packages/checkbox
       '@zira-kit/dropdown':
         specifier: workspace:*
         version: link:../packages/dropdown

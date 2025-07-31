@@ -12,16 +12,33 @@
   },
   "tags": [],
   "targets": {
-    "build": {
+    "compile": {
       "executor": "@nx/rollup:rollup",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/packages/dropdown",
-        "config": "packages/dropdown/rollup.config.ts",
+        "outputPath": "packages/dropdown/dist",
+        "config": "packages/dropdown/rollup.config.cjs",
         "tsConfig": "packages/dropdown/tsconfig.lib.json",
         "project": "packages/dropdown/package.json",
         "entryFile": "packages/dropdown/src/index.ts"
       }
+    },
+    "post-compile": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node inject-css-import.js",
+        "cwd": "packages/dropdown"
+      },
+      "inputs": ["{projectRoot}/packages/dropdown/dist"],
+      "output": "{projectRoot}/packages/dropdown/dist"
+    },
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["nx run dropdown:compile", "nx run dropdown:post-compile"],
+        "parallel": false
+      },
+      "outputs": ["{projectRoot}/packages/dropdown/dist"]
     },
     "nx-release-publish": {
       "options": {
