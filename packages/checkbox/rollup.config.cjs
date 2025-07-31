@@ -5,11 +5,10 @@ const postcss = require('rollup-plugin-postcss');
 module.exports = withNx(
   {
     main: './src/index.ts',
-    outputPath: '../../dist/packages/checkbox',
+    outputPath: './dist',
     tsConfig: './tsconfig.lib.json',
     compiler: 'swc',
-    format: ['cjs', 'esm'],
-    assets: [{ input: '{projectRoot}', output: '.', glob: '*.md' }],
+    format: ['esm'],
     plugins: [
       svgr(),
       postcss({

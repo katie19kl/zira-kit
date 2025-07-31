@@ -17,16 +17,36 @@
         "packageRoot": "dist/{projectRoot}"
       }
     },
-    "build": {
+    "compile": {
       "executor": "@nx/rollup:rollup",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/packages/checkbox",
-        "config": "packages/checkbox/rollup.config.ts",
+        "outputPath": "packages/checkbox/dist",
+        "config": "packages/checkbox/rollup.config.cjs",
         "tsConfig": "packages/checkbox/tsconfig.lib.json",
         "project": "packages/checkbox/package.json",
         "entryFile": "packages/checkbox/src/index.ts"
       }
+    },
+    "post-compile": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node inject-css-import.js",
+        "cwd": "packages/checkbox"
+      },
+      "inputs": ["{projectRoot}/packages/checkbox/dist"],
+      "output": "{projectRoot}/packages/checkbox/dist"
+    },
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "nx run checkbox:compile",
+          "nx run checkbox:post-compile"
+        ],
+        "parallel": false
+      },
+      "outputs": ["{projectRoot}/packages/checkbox/dist"]
     }
   }
 }
